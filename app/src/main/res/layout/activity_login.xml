@@ -100,7 +100,7 @@
         android:textSize="15sp"
         android:gravity="center_horizontal"
         android:layout_centerHorizontal="true"
-        android:text="@string/verify_info_1"
+        android:text="Signup,if you dont have an account"
         android:textColor="#9E9E9E"
         android:onClick="verify"/>
 

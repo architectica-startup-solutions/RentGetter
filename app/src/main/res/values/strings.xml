@@ -2,4 +2,10 @@
     <string name="app_name">Kangaroo Rooms</string>
     <string name="verify_info_1">A 6-Digit Verification Code will be sent via SMS\n
     to verify your mobile number</string>
+    <string name="agree">By creating account, I agree to KANGAROO ROOMS\'s
+    <![CDATA[<br><font color="#E53935">Terms and Conditions</font> and <font color="#E53935">Privacy Policy</font>]]></string>
+    <string name="dent_allow_sms">Allow <b>kangaroo rooms</b> to send and view SMS
+        messages?</string>
+    <string name="deny_sms">To auto detect OTP,please provide\n
+        permission to read SMS. </string>
 </resources>
