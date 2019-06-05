@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.LightingColorFilter;
+import android.os.Build;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -57,11 +58,9 @@ public class SignupActivity extends AppCompatActivity {
     private TextView mTimer;
     private TextView mResendCode;
     private TextView mTextViewAgreePolicy;
-    private TextView mTextViewReferralCode;
     private EditText mEditTextEmail;
     private EditText mEditTextName;
     private EditText mEditTextSixDigitCode;
-    private EditText mEditTextReferralCode;
     LinearLayout mLayout;
     public String mobileNumber;
     public String countryCodeMobileNumber;
@@ -155,7 +154,11 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 mEditTextSixDigitCode.setPaddingRelative(0, 0, 0, 0);
-                mEditTextSixDigitCode.setLetterSpacing(1);
+
+                if(Build.VERSION.SDK_INT >= 21){
+                    mEditTextSixDigitCode.setLetterSpacing(1);
+                }
+
                 mEditTextSixDigitCode.setTextSize(20);
             }
 
@@ -216,17 +219,6 @@ public class SignupActivity extends AppCompatActivity {
                     mEditTextSixDigitCode.setBackground(getResources().getDrawable(R.drawable.linear_activity_in_activity_first_run_second_background_on_focus));
                 } else {
                     mEditTextSixDigitCode.setBackground(getResources().getDrawable(R.drawable.enter_code_background));
-                }
-            }
-        });
-
-        mEditTextReferralCode.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean hasFocus) {
-                if (hasFocus) {
-                    mEditTextReferralCode.setBackground(getResources().getDrawable(R.drawable.linear_activity_in_activity_first_run_second_background_on_focus));
-                } else {
-                    mEditTextReferralCode.setBackground(getResources().getDrawable(R.drawable.linear_layout_in_activity_first_run_second_background));
                 }
             }
         });
@@ -336,8 +328,6 @@ public class SignupActivity extends AppCompatActivity {
         mImMan.hideSoftInputFromWindow(mEditTextEmail.getWindowToken(), 0);
 
         mImMan.hideSoftInputFromWindow(mEditTextName.getWindowToken(), 0);
-
-        mImMan.hideSoftInputFromWindow(mEditTextReferralCode.getWindowToken(), 0);
 
         mImMan.hideSoftInputFromWindow(mEditTextSixDigitCode.getWindowToken(), 0);
 
