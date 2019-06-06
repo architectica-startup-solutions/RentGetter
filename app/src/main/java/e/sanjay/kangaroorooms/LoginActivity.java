@@ -160,22 +160,13 @@ public class LoginActivity extends AppCompatActivity {
 
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-                    String data = ds.getValue().toString();
+                    String phoneNum = ds.child("PhoneNumber").getValue(String.class);
 
-                    Log.i("data", data);
+                    if (fullNumber.equals(phoneNum)) {
 
-                    DataSnapshot dataSnap = ds.child("PhoneNumber");
+                        isUserRegistered = true;
+                        break;
 
-                    for (DataSnapshot dsp : dataSnap.getChildren()) {
-
-                        String phoneNum = dsp.getValue().toString();
-
-                        if (fullNumber.equals(phoneNum)) {
-
-                            isUserRegistered = true;
-                            break;
-
-                        }
                     }
 
                 }
@@ -257,31 +248,19 @@ public class LoginActivity extends AppCompatActivity {
 
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-
                     String data = ds.getValue().toString();
 
                     Log.i("data", data);
 
-                    DataSnapshot dataSnap = ds.child("PhoneNumber");
+                    String phoneNum = ds.child("PhoneNumber").getValue(String.class);
 
-                    for (DataSnapshot dsp : dataSnap.getChildren()) {
+                    if (fullNumber.equals(phoneNum)) {   //but returning false
 
-                        String phoneNum = dsp.getValue().toString();
+                        isUserRegistered = true;
+                        userName = ds.child("Name").getValue(String.class);
+                        break;
 
-                        if (fullNumber.equals(phoneNum)) {   //but returning false
-
-                            isUserRegistered = true;
-                            DataSnapshot snapshot = ds.child("Name");
-                            for (DataSnapshot snapshot1 : snapshot.getChildren()){
-
-                                userName = snapshot1.getValue(String.class);
-                                break;
-
-                            }
-
-                        }
                     }
-
 
                 }
 

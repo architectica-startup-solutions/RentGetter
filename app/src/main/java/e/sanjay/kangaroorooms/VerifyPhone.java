@@ -221,25 +221,13 @@ public class VerifyPhone extends AppCompatActivity {
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
 
-                    DataSnapshot phoneSnap = snapshot.child("PhoneNumber");
+                    if (countryCodeMobileNumber.equals(snapshot.child("PhoneNumber").getValue(String.class))){
 
-                    for (DataSnapshot snapshot1 : phoneSnap.getChildren()){
+                        LoginActivity.userUid = snapshot.getKey();
 
-                        if (countryCodeMobileNumber.equals(snapshot1.getValue(String.class))){
+                        LoginActivity.userName = snapshot.child("Name").getValue(String.class);
 
-                            LoginActivity.userUid = snapshot.getKey();
-
-                            DataSnapshot nameSnap = snapshot.child("Name");
-
-                            for (DataSnapshot dataSnapshot1 : nameSnap.getChildren()){
-
-                                LoginActivity.userName = dataSnapshot1.getValue(String.class);
-
-                            }
-
-                            break;
-
-                        }
+                        break;
 
                     }
 
