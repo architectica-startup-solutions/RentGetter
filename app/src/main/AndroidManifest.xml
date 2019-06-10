@@ -21,7 +21,7 @@
         <activity
             android:name=".LoginActivity"
             android:label=" "
-            android:theme="@style/FirstRumTheme"/>
+            android:theme="@style/FirstRumTheme" />
         <activity
             android:name=".SignupActivity"
             android:label=" "
@@ -30,9 +30,18 @@
             android:name=".VerifyPhone"
             android:label=" "
             android:theme="@style/FirstRumTheme" />
-        <activity android:name=".FirstActivity"
+        <activity
+            android:name=".FirstActivity"
             android:label=" "
-            android:theme="@style/FirstRumTheme"></activity>
+            android:theme="@style/FirstRumTheme" />
+        <activity
+            android:name=".CouponsActivity"
+            android:theme="@style/FirstRumTheme" />
+        <activity
+            android:name=".SearchActivity1"
+            android:theme="@style/FirstRumTheme" />
+        <activity android:name=".AllVehiclesActivity" />
+        <activity android:name=".HotelsActivity"></activity>
     </application>
 
 </manifest>

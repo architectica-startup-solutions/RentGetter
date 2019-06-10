@@ -275,7 +275,6 @@ public class VerifyPhone extends AppCompatActivity {
 
     }
 
-
     public void resendCode(View view){
 
         PhoneAuthProvider.getInstance().verifyPhoneNumber(

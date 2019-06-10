@@ -26,6 +26,7 @@ public class FirstActivity extends AppCompatActivity {
     public static BottomNavigationView bottomNavigationView;
     Fragment myFragment;
     Fragment selectedFragment;
+    static String Vehicle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +84,119 @@ public class FirstActivity extends AppCompatActivity {
             finish();
 
         }
+
+    }
+
+    public void showFamilyRooms(View view){
+
+        Vehicle = "Tag1";
+        Intent intent = new Intent(this,SearchActivity1.class);
+        intent.putExtra("vehicle",Vehicle);
+        startActivity(intent);
+
+    }
+
+    public void showSingleRooms(View view){
+
+        Vehicle = "Tag0";
+        Intent intent = new Intent(this,SearchActivity1.class);
+        intent.putExtra("vehicle",Vehicle);
+        startActivity(intent);
+
+    }
+
+    public void showBoysRooms(View view){
+
+        Vehicle = "Tag2";
+        Intent intent = new Intent(this,SearchActivity1.class);
+        intent.putExtra("vehicle",Vehicle);
+        startActivity(intent);
+
+    }
+
+    public void showGirlsRooms(View view){
+
+        Vehicle = "Tag3";
+        Intent intent = new Intent(this,SearchActivity1.class);
+        intent.putExtra("vehicle",Vehicle);
+        startActivity(intent);
+
+    }
+
+    public void showBoysHostels(View view){
+
+        Vehicle = "Tag4";
+        Intent intent = new Intent(this,SearchActivity1.class);
+        intent.putExtra("vehicle",Vehicle);
+        startActivity(intent);
+
+    }
+
+    public void showGirlsHostels(View view){
+
+        Vehicle = "Tag5";
+        Intent intent = new Intent(this,SearchActivity1.class);
+        intent.putExtra("vehicle",Vehicle);
+        startActivity(intent);
+
+    }
+
+    /*
+    public void showSearchActivityBikes(View view) {
+        Vehicle = "Bikes";
+        Intent intent = new Intent(this,SearchActivity1.class);
+        intent.putExtra("vehicle",Vehicle);
+        startActivity(intent);
+    }
+
+    public void showSearchActivitySelfDriveCars(View view) {
+        Vehicle = "Self drive cars";
+        Intent intent = new Intent(this,SearchActivity1.class);
+        intent.putExtra("vehicle",Vehicle);
+        startActivity(intent);
+    }
+
+    public void showSearchActivityDriverDriveCars(View view) {
+        Vehicle = "Cars with drivers";
+        Intent intent = new Intent(this,SearchActivity1.class);
+        intent.putExtra("vehicle",Vehicle);
+        startActivity(intent);
+    }
+
+    */
+
+    public void showSearchActivityAll(View view){
+
+        Vehicle = "All";
+        Intent intent = new Intent(this,SearchActivity1.class);
+        intent.putExtra("vehicle",Vehicle);
+        startActivity(intent);
+    }
+
+    public void showSearchActivity(View view){
+        MenuItem homeItem = bottomNavigationView.getMenu().getItem(0);
+
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_layout, HomeFragment.newInstance(),"CURRENT_FRAGMENT");
+        transaction.commit();
+
+        bottomNavigationView.getMenu().findItem(homeItem.getItemId()).setChecked(true);
+    }
+
+    public void openWhatsApp(View view){
+
+        String number = "+91 8209595522";
+        String url = "https://api.whatsapp.com/send?phone="+number;
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        startActivity(i);
+
+    }
+
+    public void ShowCoupons(View view){
+
+        Intent intent = new Intent(FirstActivity.this,CouponsActivity.class);
+        startActivity(intent);
 
     }
 
