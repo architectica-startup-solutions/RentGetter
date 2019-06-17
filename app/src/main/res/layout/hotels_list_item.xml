@@ -29,7 +29,7 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/ic_favorite_white_24dp"
                 android:clickable="true"
-                android:visibility=""/>
+                android:visibility="gone"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"

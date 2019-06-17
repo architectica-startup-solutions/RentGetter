@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="e.sanjay.kangaroorooms">
 
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -41,7 +48,26 @@
             android:name=".SearchActivity1"
             android:theme="@style/FirstRumTheme" />
         <activity android:name=".AllVehiclesActivity" />
-        <activity android:name=".HotelsActivity"></activity>
+        <activity android:name=".HotelsActivity" />
+        <activity android:name=".HotelActivity_1" />
+        <activity android:name=".Chat" />
+        <activity android:name=".chatsList" />
+        <activity android:name=".SetDatesActivity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".ShowLocationOnMapActivity"
+            android:label="@string/title_activity_show_location_on_map"></activity>
     </application>
 
 </manifest>

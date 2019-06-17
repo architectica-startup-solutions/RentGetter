@@ -8,4 +8,9 @@
         messages?</string>
     <string name="deny_sms">To auto detect OTP,please provide\n
         permission to read SMS. </string>
+    <string name="guest_policy">By proceeding, you agree to our
+    <![CDATA[<font color="#FF0000">Guest Policies</font>]]></string>
+    <string name="trade_name">This ROOM is serviced under the trade name and as per quality staandards of KANGAROO ROOMS</string>
+    <string name="title_activity_show_location_on_maps">Map</string>
+    <string name="title_activity_show_location_on_map">Map</string>
 </resources>
