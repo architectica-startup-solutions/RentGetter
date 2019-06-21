@@ -47,12 +47,18 @@
         <activity
             android:name=".SearchActivity1"
             android:theme="@style/FirstRumTheme" />
-        <activity android:name=".AllVehiclesActivity" />
-        <activity android:name=".HotelsActivity" />
-        <activity android:name=".HotelActivity_1" />
-        <activity android:name=".Chat" />
-        <activity android:name=".chatsList" />
-        <activity android:name=".SetDatesActivity" />
+        <activity android:name=".AllVehiclesActivity"
+            android:theme="@style/FirstRumTheme"/>
+        <activity android:name=".HotelsActivity"
+            android:theme="@style/FirstRumTheme"/>
+        <activity android:name=".HotelActivity_1"
+            android:theme="@style/FirstRumTheme"/>
+        <activity android:name=".Chat"
+            android:theme="@style/FirstRumTheme"/>
+        <activity android:name=".chatsList"
+            android:theme="@style/FirstRumTheme"/>
+        <activity android:name=".SetDatesActivity"
+            android:theme="@style/FirstRumTheme"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
